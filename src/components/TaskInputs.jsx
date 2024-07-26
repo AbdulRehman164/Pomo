@@ -1,7 +1,14 @@
 import { useState } from 'react';
 
-const TaskInputs = ({ setIsTaskInputsVisible, setTasks, tasks }) => {
+const TaskInputs = ({
+    setIsTaskInputsVisible,
+    setIsTaskSet,
+    setTask,
+    task,
+}) => {
     const [taskText, setTaskText] = useState('');
+    const [hoursInput, setHoursInput] = useState('');
+    const [minsInput, setMinsInput] = useState('');
     return (
         <div>
             <input
@@ -12,15 +19,37 @@ const TaskInputs = ({ setIsTaskInputsVisible, setTasks, tasks }) => {
                     setTaskText(e.target.value);
                 }}
             />
-            <input type="text" />
-            <input type="text" />
+            <input
+                type="text"
+                placeholder="00"
+                value={hoursInput}
+                onChange={(e) => {
+                    setHoursInput(e.target.value);
+                }}
+            />
+            <span>h</span>
+            <input
+                type="text"
+                placeholder="00"
+                value={minsInput}
+                onChange={(e) => {
+                    setMinsInput(e.target.value);
+                }}
+            />
+            <span>m</span>
             <button
                 onClick={() => {
-                    setTasks([...tasks, taskText]);
+                    setTask({
+                        ...task,
+                        taskText,
+                        hours: hoursInput,
+                        mins: minsInput,
+                    });
                     setIsTaskInputsVisible(false);
+                    setIsTaskSet(true);
                 }}
             >
-                Add
+                set
             </button>
         </div>
     );

@@ -1,27 +1,36 @@
 import { useState } from 'react';
 import TaskInputs from './TaskInputs';
-import Tasks from './Tasks';
+import Task from './Task';
 
 const TaskMain = () => {
-    const [isTaskInputsVisible, setIsTaskInputsVisible] = useState(false);
-    const [tasks, setTasks] = useState([]);
+    const [isTaskSet, setIsTaskSet] = useState(false);
+    const [isTaskInputsVisisble, setIsTaskInputsVisible] = useState(false);
+    const [task, setTask] = useState({});
     return (
         <div>
-            <Tasks tasks={tasks} />
-            <button
-                onClick={() => {
-                    setIsTaskInputsVisible(true);
-                }}
-            >
-                Add Task
-            </button>
-            {isTaskInputsVisible ? (
+            {isTaskInputsVisisble ? (
                 <TaskInputs
                     setIsTaskInputsVisible={setIsTaskInputsVisible}
-                    setTasks={setTasks}
-                    tasks={tasks}
+                    setIsTaskSet={setIsTaskSet}
+                    setTask={setTask}
+                    {...task}
                 />
             ) : null}
+
+            {isTaskSet ? (
+                <Task
+                    {...task}
+                    setIsTaskInputsVisible={setIsTaskInputsVisible}
+                />
+            ) : (
+                <button
+                    onClick={() => {
+                        setIsTaskInputsVisible(true);
+                    }}
+                >
+                    Add Task
+                </button>
+            )}
         </div>
     );
 };
