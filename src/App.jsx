@@ -1,12 +1,12 @@
 import './App.css';
 import Main from './components/Main';
-import Task from './components/Task';
+import TaskMain from './components/TaskMain';
 
 function App() {
     return (
         <>
             <Main />
-            <Task />
+            <TaskMain />
         </>
     );
 }
