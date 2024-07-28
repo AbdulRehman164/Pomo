@@ -1,4 +1,4 @@
-const TimerInput = ({
+const PomoInputs = ({
     hoursInput,
     setHoursInput,
     minsInput,
@@ -47,4 +47,4 @@ const TimerInput = ({
     );
 };
 
-export default TimerInput;
+export default PomoInputs;

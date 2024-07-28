@@ -1,5 +1,5 @@
 import NavigationMenu from './NavigationMenu';
-import PomoTimer from './PomoTimer';
+import Pomo from './Pomo';
 import FocusEval from './FocusEval';
 import { useState } from 'react';
 
@@ -13,7 +13,7 @@ const Main = () => {
         <div>
             <NavigationMenu setSection={setSection} />
             {section === 'pomo' ? (
-                <PomoTimer
+                <Pomo
                     isTimerSet={isTimerSet}
                     setIsTimerSet={setIsTimerSet}
                     hoursInput={hoursInput}

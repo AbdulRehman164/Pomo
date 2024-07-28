@@ -1,12 +1,17 @@
+import { useState } from 'react';
 import './App.css';
 import Main from './components/Main';
-import TaskMain from './components/TaskMain';
+import Task from './components/Task';
+import pauseContext from './utils/pauseContext';
 
 function App() {
+    const [isPaused, setIsPaused] = useState(true);
     return (
         <>
-            <Main />
-            <TaskMain />
+            <pauseContext.Provider value={{ isPaused, setIsPaused }}>
+                <Main />
+                <Task />
+            </pauseContext.Provider>
         </>
     );
 }

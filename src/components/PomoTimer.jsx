@@ -1,45 +1,31 @@
-import TimerInput from './TimerInput';
-import Timer from './Timer';
-import { useState } from 'react';
+import useTimer from '../utils/useTimer';
 
-const PomoTimer = ({
-    isTimerSet,
-    setIsTimerSet,
-    hoursInput,
-    setHoursInput,
-    minsInput,
-    setMinsInput,
-    secsInput,
-    setSecsInput,
-}) => {
-    const [isPaused, setIsPaused] = useState(true);
+const PomoTimer = ({ h, m, s, setIsTimerSet }) => {
+    const { hours, mins, secs } = useTimer(h, m, s);
     return (
         <div>
-            {isTimerSet ? (
-                <Timer
-                    h={Number(hoursInput)}
-                    m={Number(minsInput)}
-                    s={Number(secsInput)}
-                    isPaused={isPaused}
-                    setIsTimerSet={setIsTimerSet}
-                />
-            ) : (
-                <TimerInput
-                    hoursInput={hoursInput}
-                    setHoursInput={setHoursInput}
-                    minsInput={minsInput}
-                    setMinsInput={setMinsInput}
-                    secsInput={secsInput}
-                    setSecsInput={setSecsInput}
-                    setIsTimerSet={setIsTimerSet}
-                />
-            )}
+            <h1>
+                {hours > 0 ? (
+                    <>
+                        {hours}
+                        <span>h</span>
+                    </>
+                ) : null}{' '}
+                {mins > 0 || hours > 0 ? (
+                    <>
+                        {mins < 10 ? '0' + mins : mins}
+                        <span>m</span>
+                    </>
+                ) : null}{' '}
+                {secs < 10 ? '0' + secs : secs}
+                <span>s</span>
+            </h1>
             <button
                 onClick={() => {
-                    isPaused == true ? setIsPaused(false) : setIsPaused(true);
+                    setIsTimerSet(false);
                 }}
             >
-                {isPaused === true ? 'start' : 'pause'}
+                edit
             </button>
         </div>
     );

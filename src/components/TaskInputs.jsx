@@ -1,14 +1,14 @@
-import { useState } from 'react';
-
 const TaskInputs = ({
     setIsTaskInputsVisible,
     setIsTaskSet,
     setTask,
-    task,
+    taskText,
+    setTaskText,
+    hoursInput,
+    setHoursInput,
+    minsInput,
+    setMinsInput,
 }) => {
-    const [taskText, setTaskText] = useState('');
-    const [hoursInput, setHoursInput] = useState('');
-    const [minsInput, setMinsInput] = useState('');
     return (
         <div>
             <input
@@ -40,10 +40,9 @@ const TaskInputs = ({
             <button
                 onClick={() => {
                     setTask({
-                        ...task,
                         taskText,
-                        hours: hoursInput,
-                        mins: minsInput,
+                        h: Number(hoursInput),
+                        m: Number(minsInput),
                     });
                     setIsTaskInputsVisible(false);
                     setIsTaskSet(true);
