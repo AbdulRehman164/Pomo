@@ -1,4 +1,9 @@
+import { useContext } from 'react';
+import pauseContext from '../utils/pauseContext';
+
 const NavigationMenu = ({ setSection }) => {
+    const { setIsPaused } = useContext(pauseContext);
+
     return (
         <div>
             <button
@@ -11,6 +16,7 @@ const NavigationMenu = ({ setSection }) => {
             <button
                 onClick={() => {
                     setSection('focus');
+                    setIsPaused(true);
                 }}
             >
                 Focus
