@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import TaskInputs from './TaskInputs';
 import TaskTimer from './TaskTimer';
 
@@ -9,11 +9,31 @@ const Task = () => {
     const [taskText, setTaskText] = useState('');
     const [hoursInput, setHoursInput] = useState('');
     const [minsInput, setMinsInput] = useState('');
+    const addBtnRef = useRef(null);
     return (
         <div>
+            {isTaskSet ? (
+                <TaskTimer
+                    {...task}
+                    setIsTaskInputsVisible={setIsTaskInputsVisible}
+                />
+            ) : (
+                <button
+                    ref={addBtnRef}
+                    className="bg-[#800000] text-3xl font-bold rounded px-10 py-3"
+                    onClick={(e) => {
+                        setIsTaskInputsVisible(true);
+                        e.target.classList.add('hidden');
+                    }}
+                >
+                    Add Task
+                </button>
+            )}
+
             {isTaskInputsVisisble ? (
                 <TaskInputs
                     setIsTaskInputsVisible={setIsTaskInputsVisible}
+                    isTaskInputsVisible={isTaskInputsVisisble}
                     setIsTaskSet={setIsTaskSet}
                     setTask={setTask}
                     {...task}
@@ -23,23 +43,9 @@ const Task = () => {
                     setHoursInput={setHoursInput}
                     minsInput={minsInput}
                     setMinsInput={setMinsInput}
+                    addBtnRef={addBtnRef}
                 />
             ) : null}
-
-            {isTaskSet ? (
-                <TaskTimer
-                    {...task}
-                    setIsTaskInputsVisible={setIsTaskInputsVisible}
-                />
-            ) : (
-                <button
-                    onClick={() => {
-                        setIsTaskInputsVisible(true);
-                    }}
-                >
-                    Add Task
-                </button>
-            )}
         </div>
     );
 };

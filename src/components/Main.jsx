@@ -10,8 +10,8 @@ const Main = () => {
     const [minsInput, setMinsInput] = useState('');
     const [secsInput, setSecsInput] = useState('');
     return (
-        <div>
-            <NavigationMenu setSection={setSection} />
+        <div className="w-[43rem] flex flex-col items-center bg-[#800000]  rounded-xl p-4 shadow-xl">
+            <NavigationMenu setSection={setSection} section={section} />
             {section === 'pomo' ? (
                 <Pomo
                     isTimerSet={isTimerSet}
