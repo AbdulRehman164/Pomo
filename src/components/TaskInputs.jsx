@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
 const TaskInputs = ({
     setIsTaskInputsVisible,
@@ -15,15 +15,10 @@ const TaskInputs = ({
     addBtnRef,
 }) => {
     const taskInputsDiv = useRef(null);
-    //useEffect(() => {
-    //    if (isTaskInputsVisible) {
-    //        taskInputsDiv.current.classList.remove('scale-0');
-    //    }
-    //});
     return (
         <div
             ref={taskInputsDiv}
-            className="flex flex-col gap-5 items-center p-2 bg-[#800000] rounded  left-[37%] shadow-xl mt-2 transition-all duration-1000"
+            className="flex flex-col gap-5 items-center p-2 bg-[rgb(148,0,0)] rounded  left-[37%] shadow-xl mt-2 transition-all duration-1000"
         >
             <input
                 className="text-xl px-2 font-bold bg-transparent text-white rounded focus-visible:outline-none"
@@ -73,7 +68,7 @@ const TaskInputs = ({
                     Cancel
                 </button>
                 <button
-                    className="bg-[#5B0000] font-bold px-2 text-xl w-24 rounded"
+                    className="bg-[#7B0000] font-bold px-2 text-xl w-24 rounded"
                     onClick={() => {
                         setTask({
                             taskText,

@@ -18,12 +18,12 @@ const Pomo = ({
     useEffect(() => {
         if (isPaused === true) {
             btnRef.current.classList.add(
-                'shadow-[0px_8px_0px_0px_rgba(91,0,0,0.7)]',
+                'shadow-[0px_8px_0px_0px_rgba(110,0,0)]',
             );
             btnRef.current.classList.remove('translate-y-1');
         } else {
             btnRef.current.classList.remove(
-                'shadow-[0px_8px_0px_0px_rgba(91,0,0,0.7)]',
+                'shadow-[0px_8px_0px_0px_rgba(110,0,0)]',
             );
             btnRef.current.classList.add('translate-y-1');
         }
@@ -51,7 +51,7 @@ const Pomo = ({
             )}
             <button
                 ref={btnRef}
-                className="bg-[#5B0000] text-2xl font-bold rounded  self-center active:translate-y-1 py-2   active:shadow-none w-52"
+                className="bg-[#7B0000] text-2xl font-bold rounded  self-center active:translate-y-1 py-2   active:shadow-none w-52"
                 onClick={() => {
                     isPaused == true ? setIsPaused(false) : setIsPaused(true);
                     setIsTimerSet(true);

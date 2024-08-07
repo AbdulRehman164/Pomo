@@ -20,7 +20,7 @@ const Task = () => {
             ) : (
                 <button
                     ref={addBtnRef}
-                    className="bg-[#800000] text-3xl font-bold rounded px-10 py-3"
+                    className="bg-[rgb(148,0,0)] text-2xl font-bold rounded px-10 py-3 shadow-xl"
                     onClick={(e) => {
                         setIsTaskInputsVisible(true);
                         e.target.classList.add('hidden');

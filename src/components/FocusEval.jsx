@@ -10,7 +10,7 @@ const FocusEval = () => {
                         type="radio"
                         name="focus"
                         id="flow"
-                        className="hidden [&:checked+label]:bg-[#a3cfa3] [&:checked+label]:text-[#800000] "
+                        className="hidden [&:checked+label]:bg-[#a3cfa3] [&:checked+label]:text-[rgb(148,0,0)] "
                         value={'Flow'}
                         onChange={(e) => {
                             setFocus(e.target.value);
@@ -18,7 +18,7 @@ const FocusEval = () => {
                     />
                     <label
                         htmlFor="flow"
-                        className="inline-block font-bold px-8 py-2 rounded w-52 transition-all duration-500 hover:bg-[#a3cfa3] hover:text-[#800000] cursor-pointer"
+                        className="inline-block font-bold px-8 py-2 rounded w-52 transition-all duration-500 hover:bg-[#a3cfa3] hover:text-[rgb(148,0,0)] cursor-pointer"
                     >
                         Flow
                     </label>
@@ -28,7 +28,7 @@ const FocusEval = () => {
                         type="radio"
                         name="focus"
                         id="highly-focused"
-                        className="hidden [&:checked+label]:bg-[#00ffff] [&:checked+label]:text-[#800000]"
+                        className="hidden [&:checked+label]:bg-[skyblue] [&:checked+label]:text-[rgb(148,0,0)]"
                         value={'Highly Focused'}
                         onChange={(e) => {
                             setFocus(e.target.value);
@@ -36,7 +36,7 @@ const FocusEval = () => {
                     />
                     <label
                         htmlFor="highly-focused"
-                        className="inline-block font-bold px-8 py-2 rounded w-52 transition-all duration-500 hover:bg-[#00ffff] hover:text-[#800000] cursor-pointer"
+                        className="inline-block font-bold px-8 py-2 rounded w-52 transition-all duration-500 hover:bg-[skyblue] hover:text-[rgb(148,0,0)] cursor-pointer"
                     >
                         Highly Focused
                     </label>
@@ -45,16 +45,16 @@ const FocusEval = () => {
                     <input
                         type="radio"
                         name="focus"
-                        id="OK"
-                        className="hidden [&:checked+label]:bg-[#ffff99] [&:checked+label]:text-[#800000]"
-                        value={'ok'}
+                        id="ok"
+                        className="hidden [&:checked+label]:bg-[#ffff99] [&:checked+label]:text-[rgb(148,0,0)]"
+                        value={'OK'}
                         onChange={(e) => {
                             setFocus(e.target.value);
                         }}
                     />
                     <label
                         htmlFor="ok"
-                        className="inline-block font-bold px-8 py-2 rounded w-52 transition-all duration-500 hover:bg-[#ffff99] hover:text-[#800000] cursor-pointer"
+                        className="inline-block font-bold px-8 py-2 rounded w-52 transition-all duration-500 hover:bg-[#ffff99] hover:text-[rgb(148,0,0)] cursor-pointer"
                     >
                         OK
                     </label>
@@ -64,7 +64,7 @@ const FocusEval = () => {
                         type="radio"
                         name="focus"
                         id="distracted"
-                        className="hidden [&:checked+label]:bg-[#ff8080] [&:checked+label]:text-[#800000]"
+                        className="hidden [&:checked+label]:bg-[#ff8080] [&:checked+label]:text-[rgb(148,0,0)]"
                         value={'Distracted'}
                         onChange={(e) => {
                             setFocus(e.target.value);
@@ -72,13 +72,13 @@ const FocusEval = () => {
                     />
                     <label
                         htmlFor="distracted"
-                        className="inline-block font-bold px-8 py-2 rounded w-52 transition-all duration-500 hover:bg-[#ff8080] hover:text-[#800000] cursor-pointer"
+                        className="inline-block font-bold px-8 py-2 rounded w-52 transition-all duration-500 hover:bg-[#ff8080] hover:text-[rgb(148,0,0)] cursor-pointer"
                     >
                         Distracted
                     </label>
                 </div>
             </div>
-            <button className="bg-[#5B0000] text-2xl font-bold rounded  self-center active:translate-y-1 py-2   active:shadow-none w-52">
+            <button className="bg-[#7B0000] text-2xl font-bold rounded  self-center active:translate-y-1 py-2   active:shadow-none w-52">
                 Set
             </button>
         </div>

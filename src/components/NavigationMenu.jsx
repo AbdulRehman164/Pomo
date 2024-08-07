@@ -8,11 +8,11 @@ const NavigationMenu = ({ setSection, section }) => {
 
     useEffect(() => {
         if (section === 'pomo') {
-            pomo.current.classList.add('bg-[#5B0000]');
-            focus.current.classList.remove('bg-[#5B0000]');
+            pomo.current.classList.add('bg-[#7B0000]');
+            focus.current.classList.remove('bg-[#7B0000]');
         } else {
-            focus.current.classList.add('bg-[#5B0000]');
-            pomo.current.classList.remove('bg-[#5B0000]');
+            focus.current.classList.add('bg-[#7B0000]');
+            pomo.current.classList.remove('bg-[#7B0000]');
         }
     });
 

@@ -5,7 +5,7 @@ const TaskTimer = ({ taskText, h, m, setIsTaskInputsVisible }) => {
     const { hours, mins } = useTimer(h, m, 0);
 
     return (
-        <div className="flex font-bold w-96 justify-between p-2 rounded bg-[#800000] shadow-xl">
+        <div className="flex font-bold w-96 justify-between p-2 rounded bg-[rgb(148,0,0)] shadow-xl">
             <div>{taskText}</div>
             <div className="flex gap-3">
                 <div className="flex gap-1">
